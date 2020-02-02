@@ -50,6 +50,11 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'user' => [
+            'identityClass' => 'evolun\user\models\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['user/default/login'],
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

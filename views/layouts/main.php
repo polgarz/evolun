@@ -11,6 +11,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use lajax\languagepicker\widgets\LanguagePicker;
+use evolun\user\widgets\ProfileDropdown;
 
 AppAsset::register($this);
 ?>
@@ -60,6 +61,7 @@ AppAsset::register($this);
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
+                        <?= ProfileDropdown::widget() ?>
                         <?= LanguagePicker::widget([
                             'itemTemplate' => '<li><a href="{link}" title="{language}"><i class="{language}"></i> {name}</a></li>',
                             'activeItemTemplate' => '<a href="#" class="dropdown-toggle" title="{language}" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-flag-o"></i></a>',
@@ -79,6 +81,8 @@ AppAsset::register($this);
                     'items' => [
                         '<li class="header">' . Yii::t('menu', 'MENÜ') . '</li>',
                         ['label' => '<i class="fa fa-home"></i> <span>' . Yii::t('menu', 'Összefoglaló') . '</span>', 'url' => ['/site/index']],
+                        ['label' => '<i class="fa fa-user"></i> <span>' . Yii::t('menu', 'Önkéntesek') . '</span>', 'url' => ['/user/default/index'], 'visible' => Yii::$app->user->can('showUsers') && Yii::$app->hasModule('user')],
+                        ['label' => '<i class="fa fa-lock"></i> <span>' . Yii::t('menu', 'Jogosultsági körök') . '</span>', 'url' => ['/user/rbac/index'], 'visible' => Yii::$app->user->can('managePermissions') && Yii::$app->hasModule('user')],
                     ],
                 ]) ?>
 
