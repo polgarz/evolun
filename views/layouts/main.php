@@ -56,7 +56,7 @@ AppAsset::register($this);
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only"><?= Yii::t('menu', 'Navigáció') ?></span>
+                    <span class="sr-only"><?= Yii::t('menu', 'Navigation') ?></span>
                 </a>
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
@@ -79,10 +79,10 @@ AppAsset::register($this);
                     'options' => ['class' => 'sidebar-menu', 'data-widget' => 'tree'],
                     'encodeLabels' => false,
                     'items' => [
-                        '<li class="header">' . Yii::t('menu', 'MENÜ') . '</li>',
-                        ['label' => '<i class="fa fa-home"></i> <span>' . Yii::t('menu', 'Összefoglaló') . '</span>', 'url' => ['/site/index']],
-                        ['label' => '<i class="fa fa-user"></i> <span>' . Yii::t('menu', 'Önkéntesek') . '</span>', 'url' => ['/user/default/index'], 'visible' => Yii::$app->user->can('showUsers') && Yii::$app->hasModule('user')],
-                        ['label' => '<i class="fa fa-lock"></i> <span>' . Yii::t('menu', 'Jogosultsági körök') . '</span>', 'url' => ['/user/rbac/index'], 'visible' => Yii::$app->user->can('managePermissions') && Yii::$app->hasModule('user')],
+                        '<li class="header">' . Yii::t('menu', 'MENU') . '</li>',
+                        ['label' => '<i class="fa fa-home"></i> <span>' . Yii::t('menu', 'Summary') . '</span>', 'url' => ['/site/index']],
+                        ['label' => '<i class="fa fa-user"></i> <span>' . Yii::t('menu', 'Volunteers') . '</span>', 'url' => ['/user/default/index'], 'visible' => Yii::$app->user->can('showUsers') && Yii::$app->hasModule('user')],
+                        ['label' => '<i class="fa fa-lock"></i> <span>' . Yii::t('menu', 'Permissions') . '</span>', 'url' => ['/user/rbac/index'], 'visible' => Yii::$app->user->can('managePermissions') && Yii::$app->hasModule('user')],
                     ],
                 ]) ?>
 
