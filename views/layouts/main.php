@@ -115,6 +115,9 @@ AppAsset::register($this);
             </section>
         </div>
 
+        <footer class="main-footer">
+            <strong>&copy; <?= date('Y') ?> | <a href="https://evolun.hu" target="_blank">Evolun</a></strong>
+        </footer>
     </div>
 
 
