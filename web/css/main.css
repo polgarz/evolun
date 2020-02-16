@@ -41,3 +41,12 @@
 .btn.dropdown-toggle .ellipsis {
     width: calc(100% - 10px);
 }
+
+@media (max-width: 767px) {
+  .main-header .navbar .dropdown-menu li a {
+    color: #333 !important;
+  }
+  .main-header .navbar .dropdown-menu li a:hover {
+    color: #fff !important;
+  }
+}

@@ -17,7 +17,12 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "almasaeed2010/adminlte": "~2.4",
         "lajax/yii2-language-picker": "1.*",
-        "polgarz/evolun-user": "@dev"
+        "polgarz/evolun-user": "@dev",
+        "polgarz/evolun-event": "@dev",
+        "polgarz/evolun-group": "@dev",
+        "polgarz/evolun-post": "@dev",
+        "polgarz/evolun-activity": "@dev",
+        "polgarz/evolun-kid": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

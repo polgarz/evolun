@@ -1,5 +1,6 @@
 <?php
 $db = require __DIR__ . '/db.php';
+$mailer = require __DIR__ . '/mailer.php';
 $params = require __DIR__ . '/params.php';
 
 $config = [
@@ -16,10 +17,7 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => YII_ENV_DEV,
-        ],
+        'mailer' => $mailer,
         'urlManager' => [
             'baseUrl' => 'https://evolun.trau.hu',
             'hostInfo' => '',
@@ -38,6 +36,11 @@ $config = [
             ],
         ],
         'db' => $db,
+    ],
+    'modules' => [
+        'activity' => [
+            'class' => 'evolun\activity\Module'
+        ],
     ],
     'params' => $params,
 ];

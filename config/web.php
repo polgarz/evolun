@@ -1,13 +1,14 @@
 <?php
 
 $db = require __DIR__ . '/db.php';
+$mailer = require __DIR__ . '/mailer.php';
 $params = require __DIR__ . '/params.php';
 
 $config = [
     'id' => 'basic',
     'name' => 'Evolun',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', 'languagepicker'],
+    'bootstrap' => ['log', 'languagepicker', 'activity'],
     'language' => 'hu-HU',
     'sourceLanguage' => 'en-US',
     'timeZone' => 'UTC',
@@ -58,10 +59,7 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => YII_ENV_DEV,
-        ],
+        'mailer' => $mailer,
         'log' => [
             'traceLevel' => YII_DEBUG ? 8 : 0,
             'targets' => [
@@ -80,13 +78,62 @@ $config = [
         ],
     ],
     'modules' => [
+        'post' => [
+            'class' => 'evolun\post\Module',
+        ],
+        'activity' => [
+            'class' => 'evolun\activity\Module',
+        ],
         'user' => [
             'class' => 'evolun\user\Module',
+            'userSearchModel' => 'evolun\group\models\UserSearch',
+            'userTemplates' => ['tools' => '@vendor/polgarz/evolun-group/views/user/_tools'],
+            'widgets' => [
+                \evolun\group\widgets\UserGroup::class
+            ],
             'modules' => [
                 'profile' => [
                     'class' => 'evolun\user\modules\profile\Module',
                 ],
+                'event' => [
+                    'class' => 'evolun\user\modules\event\Module',
+                ],
             ]
+        ],
+        'group' => [
+            'class' => 'evolun\group\Module',
+        ],
+        'kid' => [
+            'class' => 'evolun\kid\Module',
+            'modules' => [
+                'notes' => [
+                    'class' => 'evolun\kid\modules\notes\Module',
+                    'allowedGroupIds' => [1],
+                ],
+                'gallery' => [
+                    'class' => 'evolun\kid\modules\gallery\Module',
+                ],
+                'documents' => [
+                    'class' => 'evolun\kid\modules\documents\Module',
+                ],
+            ]
+        ],
+        'event' => [
+            'class' => 'evolun\event\Module',
+            'modules' => [
+                'participates' => [
+                    'class' => 'evolun\event\modules\participates\Module',
+                ],
+                'description' => [
+                    'class' => 'evolun\event\modules\description\Module',
+                ],
+                'comments' => [
+                    'class' => 'evolun\event\modules\comments\Module',
+                ],
+                'memo' => [
+                    'class' => 'evolun\event\modules\memo\Module',
+                ],
+            ],
         ],
     ],
     'params' => $params
