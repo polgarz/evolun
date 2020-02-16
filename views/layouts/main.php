@@ -82,11 +82,11 @@ AppAsset::register($this);
                         '<li class="header">' . Yii::t('menu', 'MENU') . '</li>',
                         ['label' => '<i class="fa fa-home"></i> <span>' . Yii::t('menu', 'Summary') . '</span>', 'url' => ['/site/index']],
                         ['label' => '<i class="fa fa-user"></i> <span>' . Yii::t('menu', 'Volunteers') . '</span>', 'url' => ['/user/default/index'], 'visible' => Yii::$app->user->can('showUsers') && Yii::$app->hasModule('user')],
-                        ['label' => '<i class="fa fa-lock"></i> <span>' . Yii::t('menu', 'Permissions') . '</span>', 'url' => ['/user/rbac/index'], 'visible' => Yii::$app->user->can('managePermissions') && Yii::$app->hasModule('user')],
                         ['label' => '<i class="fa fa-child"></i> <span>' . Yii::t('menu', 'Kids') . '</span>', 'url' => ['/kid/default/index'], 'visible' => Yii::$app->user->can('showKids') && Yii::$app->hasModule('kid')],
                         ['label' => '<i class="fa fa-calendar"></i> <span>' . Yii::t('menu', 'Events') . '</span>', 'url' => ['/event/default/index'], 'visible' => Yii::$app->user->can('showEvents') && Yii::$app->hasModule('event')],
                         ['label' => '<i class="fa fa-users"></i> <span>' . Yii::t('menu', 'Groups') . '</span>', 'url' => ['/group/default/index'], 'visible' => Yii::$app->user->can('showGroups') && Yii::$app->hasModule('group')],
                         ['label' => '<i class="fa fa-info-circle"></i> <span>' . Yii::t('menu', 'Informations') . '</span>', 'url' => ['/post/default/index'], 'visible' => Yii::$app->user->can('showPosts') && Yii::$app->hasModule('post')],
+                        ['label' => '<i class="fa fa-lock"></i> <span>' . Yii::t('menu', 'Permissions') . '</span>', 'url' => ['/user/rbac/index'], 'visible' => Yii::$app->user->can('managePermissions') && Yii::$app->hasModule('user')],
                     ],
                 ]) ?>
 
