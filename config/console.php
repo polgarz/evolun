@@ -8,6 +8,25 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
+    'controllerMap' => [
+        'migrate' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationPath' => [
+                '@app/migrations',
+                '@yii/rbac/migrations',
+                '@vendor/polgarz/evolun-user/migrations',
+                '@vendor/polgarz/evolun-event/migrations',
+                '@vendor/polgarz/evolun-group/migrations',
+                '@vendor/polgarz/evolun-kid/migrations',
+                '@vendor/polgarz/evolun-post/migrations',
+                '@vendor/polgarz/evolun-event/modules/comments/migrations',
+                '@vendor/polgarz/evolun-event/modules/memo/migrations',
+                '@vendor/polgarz/evolun-kid/modules/documents/migrations',
+                '@vendor/polgarz/evolun-kid/modules/gallery/migrations',
+                '@vendor/polgarz/evolun-kid/modules/notes/migrations',
+            ],
+        ],
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
