@@ -10,4 +10,6 @@ return [
     'uploadBasePath' => '@webroot/uploads',
     // a feltoltott url base
     'uploadBaseUrl' => '@web/uploads',
+    // a konzolban hasznalt base url
+    'baseUrl' => 'https://demo.evolun.hu',
 ];

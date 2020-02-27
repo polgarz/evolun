@@ -38,7 +38,7 @@ $config = [
         ],
         'mailer' => $mailer,
         'urlManager' => [
-            'baseUrl' => 'https://evolun.trau.hu',
+            'baseUrl' => $params['baseUrl'],
             'hostInfo' => '',
         ],
         'authManager' => [
