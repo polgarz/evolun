@@ -9,4 +9,5 @@ return [
     'Navigation' => 'Navigáció',
     'Informations' => 'Információk',
     'Kids' => 'Gyerekek',
+    'Administration' => 'Adminisztráció',
 ];

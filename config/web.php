@@ -89,7 +89,8 @@ $config = [
             'userSearchModel' => 'evolun\group\models\UserSearch',
             'userTemplates' => ['tools' => '@vendor/polgarz/evolun-group/views/user/_tools'],
             'widgets' => [
-                \evolun\group\widgets\UserGroup::class
+                \evolun\group\widgets\UserGroup::class,
+                \evolun\user\widgets\Responsible::class,
             ],
             'modules' => [
                 'profile' => [

@@ -26,10 +26,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
+                'only' => ['index', 'administration'],
                 'rules' => [
                     [
+                        'actions' => ['index'],
                         'allow'   => true,
                         'roles'   => ['@'],
+                    ],
+                    [
+                        'actions' => ['administration'],
+                        'allow'   => true,
+                        'roles'   => ['manageAdminData'],
                     ],
                 ]
             ],
@@ -44,5 +51,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionAdministration()
+    {
+        return $this->render('administration');
     }
 }
