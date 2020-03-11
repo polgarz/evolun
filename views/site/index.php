@@ -5,14 +5,26 @@
 $this->title = Yii::t('menu', 'Summary');
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['pageHeader'] = ['title' => $this->title];
+
 ?>
 <div class="row">
-    <?= \evolun\event\widgets\MyEventsWidget::widget() ?>
+    <div class="col-md-6">
+        <?= \evolun\event\widgets\MyEventsWidget::widget() ?>
+    </div>
 </div>
 <div class="row">
-    <?= \evolun\user\widgets\RecentUsers::widget() ?>
-    <?= \evolun\event\widgets\RecentEventsWidget::widget() ?>
+    <div class="col-md-4">
+        <?= \evolun\user\widgets\RecentUsers::widget() ?>
+    </div>
+    <div class="col-md-4">
+        <?= \evolun\event\widgets\RecentEventsWidget::widget() ?>
+    </div>
+    <div class="col-md-4">
+        <?= \evolun\event\widgets\AbsencesWidget::widget(['threshold' => 4, 'from' => new \DateTime('last year')]) ?>
+    </div>
 </div>
 <div class="row">
-    <?= \evolun\group\widgets\GroupPosts::widget() ?>
+    <div class="col-md-6">
+        <?= \evolun\group\widgets\GroupPosts::widget() ?>
+    </div>
 </div>

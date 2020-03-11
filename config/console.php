@@ -21,6 +21,7 @@ $config = [
                 '@vendor/polgarz/evolun-post/migrations',
                 '@vendor/polgarz/evolun-event/modules/comments/migrations',
                 '@vendor/polgarz/evolun-event/modules/memo/migrations',
+                '@vendor/polgarz/evolun-event/modules/missing/migrations',
                 '@vendor/polgarz/evolun-kid/modules/documents/migrations',
                 '@vendor/polgarz/evolun-kid/modules/gallery/migrations',
                 '@vendor/polgarz/evolun-kid/modules/notes/migrations',

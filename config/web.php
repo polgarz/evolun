@@ -45,7 +45,6 @@ $config = [
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
-            // uncomment if you want to cache RBAC items hierarchy
             'cache' => 'cache',
         ],
         'cache' => [
@@ -117,6 +116,11 @@ $config = [
                 'documents' => [
                     'class' => 'evolun\kid\modules\documents\Module',
                 ],
+            ],
+            'widgets' => [
+                \evolun\kid\widgets\ResponsibleUsers::class,
+                \evolun\kid\widgets\Absences::class,
+                \evolun\kid\widgets\OtherData::class,
             ]
         ],
         'event' => [
@@ -133,6 +137,10 @@ $config = [
                 ],
                 'memo' => [
                     'class' => 'evolun\event\modules\memo\Module',
+                ],
+                'absence' => [
+                    'class' => 'evolun\event\modules\absence\Module',
+                    'allowedCategoryIds' => ['study'],
                 ],
             ],
         ],
